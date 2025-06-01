@@ -28,6 +28,7 @@ void Pop(Stack *S, tipeitem *x){
 else{
     --(S->Count);
     *x = S->Item[S->Count];
+    cout<<"Nilai POP " << *x << " Di tambahkan" <<endl;
     }
 }
 
@@ -37,6 +38,28 @@ void Push(tipeitem x, Stack *S)
         cout << "Stack Hibak! Data kada kawa masuk!"<<endl;
     else{
         S->Item[S->Count]=x;
+        cout<<"Nilai PUSH " << x << " Di tambahkan" <<endl;
         ++(S->Count);
+
     }
+}
+
+int main() {
+    Stack myStack;
+    tipeitem temp;
+    InitializeStack(&myStack);
+
+    Push(10, &myStack);
+    Push(20, &myStack);
+    Push(30, &myStack);
+    Push(40, &myStack);
+    Push(50, &myStack);
+
+    Pop(&myStack, &temp);
+    Pop(&myStack, &temp);
+    Pop(&myStack, &temp);
+    Pop(&myStack, &temp);
+    Pop(&myStack, &temp);
+
+    return 0;
 }
