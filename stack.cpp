@@ -3,10 +3,10 @@
 #define MAXSTACK 5
 using namespace std;
 
-typedef int ItemType;
+typedef int tipeitem;
 
 typedef struct{
-    ItemType Item[MAXSTACK];
+    tipeitem Item[MAXSTACK];
     int Count;
 }Stack;
 
@@ -20,4 +20,13 @@ int Full(Stack *S){
 
 int Empty(Stack *S){
     return (S->Count == 0);
+}
+
+void Pop(Stack *S, tipeitem *x){
+    if (S->Count == 0)
+        cout<<"Stack kosong bro!"<<endl;
+else{
+    --(S->Count);
+    *x = S->Item[S->Count];
+    }
 }
