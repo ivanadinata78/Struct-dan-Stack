@@ -30,3 +30,13 @@ else{
     *x = S->Item[S->Count];
     }
 }
+
+void Push(tipeitem x, Stack *S)
+{
+    if (S->Count==MAXSTACK)
+        cout << "Stack Hibak! Data kada kawa masuk!"<<endl;
+    else{
+        S->Item[S->Count]=x;
+        ++(S->Count);
+    }
+}
